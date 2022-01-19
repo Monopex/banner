@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>index2</title>
+	<meta Http-Equiv="Cache-Control" Content="no-cache">
+	<meta Http-Equiv="Pragma" Content="no-cache">
+	<meta Http-Equiv="Expires" Content="0">
+	<meta Http-Equiv="Pragma-directive: no-cache">
+	<meta Http-Equiv="Cache-directive: no-cache">
+	<style>
+		div {
+			width: 100%;
+			height: 50%;
+			display: flex;
+			justify-content: center;
+		}
+    img {
+      height: 200px;
+    }
+	</style>
+</head>
+<body>
+	<div>
+		<img src="/banner.php" id="banner_img" />
+	</div>
+  <script>
+    function is_cached(src) {
+      var image = new Image();
+      image.src = src;
+      return image.complete;
+    }
+    if (is_cached('/banner.php')) {
+      document.getElementById('banner_img').src = '/banner.php?t=' + new Date().getTime();
+    }
+  </script>
+</body>
+</html>

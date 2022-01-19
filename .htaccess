@@ -1,0 +1,14 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+RewriteRule .* index.php
+
+<files .htaccess="">
+    order allow,deny
+    deny from all
+</files>
+
+<Files "index.php">
+    Order Deny,Allow
+    Allow from all
+</Files>
+
